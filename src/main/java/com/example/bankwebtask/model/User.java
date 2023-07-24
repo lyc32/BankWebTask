@@ -2,7 +2,7 @@ package com.example.bankwebtask.model;
 
 public class User
 {
-    private String userId;
+    private int userId;
     private String firstName;
     private String lastName;
     private String userPass;
@@ -30,11 +30,11 @@ public class User
         this.state = state;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

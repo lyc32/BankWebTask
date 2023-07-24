@@ -88,6 +88,7 @@ public class UserRepository
                                 resultSet.getString("accountType"),
                                 new Address(resultSet.getString("address")),
                                 resultSet.getString("state"));
+                        user.setUserId(Integer.parseInt(resultSet.getString("userId")));
                     }
                 }
                 catch (SQLException e)

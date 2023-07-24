@@ -5,10 +5,10 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MyBalance</a>
+                    <a class="nav-link" href="./index.jsp?location=MyAccount&view=Balance">MyBalance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MyTransaction</a>
+                    <a class="nav-link" href="./index.jsp?location=MyAccount&view=Statement">MyStatement</a>
                 </li>
             </ul>
         </div>
@@ -17,7 +17,6 @@
                 <li class="nav-item dropdown text-center" style = "min-width:160px">
                     <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
                         <%
-                            //Candidate candidate = (Candidate) request.getSession().getAttribute("candidate");
                             User user = (User) request.getSession().getAttribute("user");
                             String userName;
                             userName = (user == null) ? "Log In": user.getFirstName() + " " + user.getLastName();
