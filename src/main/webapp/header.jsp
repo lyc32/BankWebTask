@@ -5,7 +5,7 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link" href="./index.jsp?location=MyAccount&view=Balance">MyBalance</a>
+                    <a class="nav-link" href="./index.jsp?location=MyAccount&view=Info">MyBalance</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./index.jsp?location=MyAccount&view=Statement">MyStatement</a>

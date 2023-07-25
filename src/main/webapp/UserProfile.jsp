@@ -1,5 +1,5 @@
 <div class="container mt-4 mb-4 pt-4" style="min-height: 800px;">
-    <div class="row g-3 my-2">
+    <div class="row g-3 my-2" style="min-height: 600px;">
         <div class="col-sm-2 card border" style="width:200px;">
             <div class="card-body  text-center">
                 <h3 class="card-title text-center border-bottom  pb-4">My Profile</h3>
@@ -18,13 +18,16 @@
                         <a class="col-form-label h3" href="./index.jsp?location=MyAccount&view=Address">Mail Address</a>
                     </div>
                     <div class="col-sm-12 border-bottom">
-                        <a class="col-form-label h3" href="./index.jsp?location=MyAccount&view=Balance">MyBalance</a>
+                        <a class="col-form-label h3" href="./index.jsp?location=MyAccount&view=Password">Reset Password</a>
                     </div>
                     <div class="col-sm-12 border-bottom">
-                        <a class="col-form-label h3" href="./index.jsp?location=MyAccount&view=Statement">Statement</a>
+                        <a class="col-form-label h3" href="./index.jsp?location=MyAccount&view=MyRequest">MyRequest</a>
                     </div>
                     <div class="col-sm-12 border-bottom">
-                        <a class="col-form-label h3" href="./index.jsp?location=MyAccount&view=Password">Reset Passwprd</a>
+                        <a class="col-form-label h3" href="./index.jsp?location=MyAccount&view=TransactionHistory">TransactionHistory</a>
+                    </div>
+                    <div class="col-sm-12 border-bottom">
+                        <a class="col-form-label h3" href="./index.jsp?location=MyAccount&view=Statement">Get Statement</a>
                     </div>
                 </div>
                 </p>
@@ -46,10 +49,10 @@
             <jsp:include page="UserProfileAddress.jsp" flush="true"/>
             <%
             }
-            else if(view.equals("Balance"))
+            else if(view.equals("MyRequest"))
             {
             %>
-            <jsp:include page="UserProfileBalance.jsp" flush="true"/>
+            <jsp:include page="UserProfileRequest.jsp" flush="true"/>
             <%
             }
             else if(view.equals("Email"))
@@ -70,12 +73,18 @@
             <jsp:include page="UserProfileStatement.jsp" flush="true"/>
             <%
             }
+            else if(view.equals("TransactionHistory"))
+            {
+            %>
+            <jsp:include page="UserProfileTransactionHistory.jsp" flush="true"/>
+            <%
+            }
             else if(view.equals("Password"))
             {
             %>
             <jsp:include page="UserProfilePassword.jsp" flush="true"/>
             <%
-                }
+            }
             %>
             </div>
         </div>

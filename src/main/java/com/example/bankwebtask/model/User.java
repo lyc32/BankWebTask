@@ -8,29 +8,20 @@ public class User
     private String userPass;
     private String phoneNumber;
     private String email;
-    private String accountType;
-    private double balance;
-    private Address address;
-    private String state;
-
 
     public User()
-    {
+    {}
 
-    }
-
-    public User(String firstName, String lastName, String userPass, String phoneNumber, String email, String accountType, Address address, String state) {
+    public User(String firstName, String lastName, String userPass, String phoneNumber, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userPass = userPass;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.accountType = accountType;
-        this.address = address;
-        this.state = state;
     }
 
-    public int getUserId() {
+    public int getUserId()
+    {
         return userId;
     }
 
@@ -76,37 +67,5 @@ public class User
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getAccountType() {
-        return accountType;
-    }
-
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 }

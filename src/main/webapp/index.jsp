@@ -1,4 +1,13 @@
+<%@ page import="com.example.bankwebtask.severice.Service" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    //ServletContext servletContext = this.getServletContext();
+    String sqlDriver  = "com.mysql.cj.jdbc.Driver";
+    String sqlUrl     = "jdbc:mysql://localhost:3306/BankWebTask?useSSL=false";
+    String sqlUserName= "root";
+    String sqlPassword= "";
+    Service.init(sqlDriver,sqlUrl,sqlUserName,sqlPassword);
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +26,7 @@
     else if(location.equals("Login"))
     {
 %>
-<jsp:include page="UserLogin.html" flush="true"/>
+<jsp:include page="Login.html" flush="true"/>
 <%
     }
     else if(location.equals("SignIn"))

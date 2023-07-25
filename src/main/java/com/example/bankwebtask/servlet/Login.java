@@ -1,7 +1,7 @@
 package com.example.bankwebtask.servlet;
 
-import com.example.bankwebtask.model.User;
-import com.example.bankwebtask.severice.UserService;
+import com.example.bankwebtask.model.*;
+import com.example.bankwebtask.severice.*;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -9,13 +9,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "UserLogin", value = "/UserLogin")
-public class UserLogin extends HttpServlet {
+public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         HttpSession httpSession = request.getSession();
-        User user= (User)httpSession.getAttribute("user");
-
+        User user = (User)httpSession.getAttribute("user");
         if(user != null)
         {
             response.setContentType("text/html");
@@ -42,14 +41,16 @@ public class UserLogin extends HttpServlet {
             // check user email and password
             else
             {
-                ServletContext servletContext = getServletContext();
-                String sqlDriver  = servletContext.getInitParameter("SqlDriver");
-                String sqlUrl     = servletContext.getInitParameter("SqlUrl");
-                String sqlUserName= servletContext.getInitParameter("SqlUserName");
-                String sqlPassword= servletContext.getInitParameter("SqlPassWord");
+                String manager = request.getParameter("manager");
+                if(manager == null)
+                {
+                    user = new CustomerService().login(email, password);
+                }
+                else
+                {
+                    user = new ManagerService().login(email, password);
+                }
 
-                UserService userService = new UserService(sqlDriver,sqlUrl,sqlUserName,sqlPassword);
-                user = userService.login(email, password);
                 // find a user
                 if (user!=null)
                 {
